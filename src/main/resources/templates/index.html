@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>My Twitter</title>
+        <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class="container">
+            <div class="bgphoto">
+                <header class="header">
+                    <div class="logo"></div>
+                    <div class="loginCont">
+                        <button class="btn bg-colorRed"><a th:href="@{/login}">Login</a></button>
+
+                    </div>
+                </header>
+                <div class="showcase">
+                    <div class="showcaseContent">
+                        <h1 class="title marginB">Twitter</h1>
+                        <p class="parag marginA">Connect with your friends</p>
+                        <button class="btn bg-colorDark"><a th:href="@{/signup}">Signup</a></button>
+                    </div>
+                    
+                </div>
+            </div>
+           
+        </div>
+        
+
+
+    </body>
+</html>

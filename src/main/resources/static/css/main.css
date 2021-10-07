@@ -1,0 +1,112 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 6, 2021, 6:27:45 PM
+    Author     : OMISTAJA
+*/
+
+*{
+    font-family:sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+a{
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2px;
+}
+
+/*Utils*/
+.marginA{
+    margin-bottom: 15px;
+}
+
+.marginB{
+    margin-bottom: 25px;
+}
+
+.flexCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-colorRed{
+    background-color: #cc0000;
+}
+
+.bg-colorDark{
+    background-color: #0f0f0f;
+}
+
+.btn{
+    padding: 10px 25px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    
+    cursor: pointer;
+}
+
+
+
+.container{
+    height: 100vh;
+}
+
+.bgphoto{
+    background: url(https://media.istockphoto.com/photos/teamwork-network-and-community-concept-picture-id1290692464?b=1&k=20&m=1290692464&s=170667a&w=0&h=dqOKmx-eAr8otIlDUgr6wtFQVq4ssywThTOnyhOpiA0=) no-repeat center center/cover;
+    position: relative;
+}
+
+.header{
+    height: 20vh;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.logo{
+    font-size: 30px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+.loginCont{}
+
+.showcase{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.showcaseContent{
+    transform: translate(-100%, -50%)
+}
+
+.parag{
+    color: white;
+}
+
+.title{
+    font-size: 70px;
+    letter-spacing: 5px;
+    color: white;
+}
+
+.footer{
+    height: 20vh;
+    
+    
+}
+
+
+
+
+
