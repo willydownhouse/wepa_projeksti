@@ -12,9 +12,9 @@ public class DefaultController {
         return "index";
     }
     
-    @GetMapping("/login")
+    @GetMapping("/main")
     public String login(Model model) {
-        return "login";
+        return "main";
     }
     
     @GetMapping("*")

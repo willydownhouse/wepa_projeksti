@@ -1,33 +1,104 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8" />
-        <title>My Twitter</title>
-        <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css"/>
-    </head>
-    <body>
-        <div class="container">
-            <div class="bgphoto">
-                <header class="header">
-                    <div class="logo"></div>
-                    <div class="loginCont">
-                        <button class="btn bg-colorRed"><a th:href="@{/login}">Login</a></button>
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Twitter</title>
 
-                    </div>
-                </header>
-                <div class="showcase">
-                    <div class="showcaseContent">
-                        <h1 class="title marginB">Twitter</h1>
-                        <p class="parag marginA">Connect with your friends</p>
-                        <button class="btn bg-colorDark"><a th:href="@{/signup}">Signup</a></button>
-                    </div>
-                    
-                </div>
-            </div>
-           
+    <link rel="preconnect" th:href="@{https://fonts.googleapis.com}" />
+    <link rel="preconnect" th:href="@{https://fonts.gstatic.com}" />
+    <link
+      th:href="@{https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap}"
+      rel="stylesheet"
+    />
+
+    <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="cont">
+      <div class="bgphoto">
+        <header class="header">
+          <div class="logo"></div>
+          <div class="loginCont">
+            <button id="loginBtn" class="btn bg-colorRed">Login</button>
+          </div>
+        </header>
+        <div class="showcase">
+          <div class="showcaseContent">
+            <h1 class="title marginB">Twitter</h1>
+            <p class="parag marginA">Connect with your friends</p>
+            <button id="signUpBtn" class="btn bg-colorDark">
+              <!-- <a th:href="@{/signup}">Signup</a> -->
+              Signup
+            </button>
+          </div>
         </div>
-        
+        <div class="modal hidden">
+          <div class="modal-window">
+            <form class="form" method="POST">
+              <h3 id="formTitle"></h3>
+              <div class="formField marginA">
+                <label class="label">Name</label>
+                <input
+                  type="text"
+                  class="formInput"
+                  name="name"
+                  id="name"
+                  required
+                />
+              </div>
+              <div class="formField marginA">
+                <label class="label">Email</label>
+                <input
+                  type="email"
+                  class="formInput"
+                  name="email"
+                  id="email"
+                  required
+                />
+              </div>
+              <div class="formField marginA">
+                <label class="label">Password</label>
+                <input
+                  type="password"
+                  class="formInput"
+                  name="password"
+                  id="password"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn bg-colorDark">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <script>
+      const loginBtn = document.querySelector("#loginBtn");
+      const signUpBtn = document.querySelector("#signUpBtn");
+      const formTitle = document.querySelector("#formTitle");
+      const overlay = document.querySelector(".modal");
+      const form = document.querySelector(".form");
 
-    </body>
+      loginBtn.addEventListener("click", () => {
+        overlay.classList.remove("hidden");
+        formTitle.textContent = "Login";
+        form.setAttribute("action", "/login");
+        console.log(form.getAttribute("action"));
+      });
+
+      signUpBtn.addEventListener("click", () => {
+        overlay.classList.remove("hidden");
+        formTitle.textContent = "Sign up";
+        form.setAttribute("action", "/signup");
+        console.log(form.getAttribute("action"));
+      });
+
+      overlay.addEventListener("click", (e) => {
+        if (!e.target.closest(".modal-window")) {
+          overlay.classList.add("hidden");
+        }
+      });
+    </script>
+  </body>
 </html>
