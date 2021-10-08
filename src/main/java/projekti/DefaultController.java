@@ -12,15 +12,12 @@ public class DefaultController {
         return "index";
     }
     
-    @GetMapping("/main")
-    public String login(Model model) {
-        return "main";
-    }
     
-    @GetMapping("*")
-    public String error(Model model) {
-        return "index";
-    }
+    
+    // @GetMapping("*")
+    // public String error(Model model) {
+    //     return "index";
+    // }
 }
 
 

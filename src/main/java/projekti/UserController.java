@@ -20,14 +20,13 @@ public class UserController {
 
     @PostMapping("/signup")
     public String create(@RequestParam String name, @RequestParam String email, @RequestParam String password){
-        System.out.println(name + email + password);
         userService.createUser(name, email, password);
-        return "redirect:/main";
+        return "redirect:/tweets";
     }
 
     @PostMapping("/login")
     public String login(@RequestParam String name, @RequestParam String email, @RequestParam String password){
         System.out.println("LETS LOGGIN!!!!");
-        return "/main";
+        return "redirect:/tweets";
     }
 }

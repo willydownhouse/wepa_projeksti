@@ -17,10 +17,11 @@ public class UserService {
 
     public void createUser(String name, String email, String password){
         User a = new User();
-        a.name = name;
-        a.email = email;
-        a.password = password;
-        //a.seuraajat = new ArrayList<>();
+        a.setName(name);
+        a.setEmail(email);
+        a.setPassword(password);
+        a.setSeuraajat(new ArrayList<>());
+        
 
         if(!userRepository.findAll().contains(a)){
             userRepository.save(a);
