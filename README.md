@@ -1,4 +1,4 @@
 # wepa_projeksti
 
 App running:
-https://still-refuge-17463.herokuapp.com/
+https://morning-earth-66742.herokuapp.com/
