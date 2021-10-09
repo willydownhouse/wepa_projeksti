@@ -16,7 +16,7 @@ public class TweetController {
     @GetMapping("/tweets")
     public String allTweets(Model model){
         model.addAttribute("tweets", tweetService.getAll());
-        return "main";
+        return "tweets";
     }
 
     

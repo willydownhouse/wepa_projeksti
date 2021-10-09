@@ -14,10 +14,10 @@ public class DefaultController {
     
     
     
-    // @GetMapping("*")
-    // public String error(Model model) {
-    //     return "index";
-    // }
+    @GetMapping("*")
+    public String error(Model model) {
+        return "index";
+    }
 }
 
 

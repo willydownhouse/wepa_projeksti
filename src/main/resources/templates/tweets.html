@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Twitter | Login</title>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+
+    <link th:href="@{/css/tweets.css}" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="pageWrapper">
+      <div class="container">
+        <nav class="navbar navbar-light bg-light">
+          <div class="p-0 container-fluid">
+            <a class="navbar-brand" href="/">
+              <h3 class="text-muted">My page</h3>
+            </a>
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+            </form>
+            <form class="d-flex">
+              <button class="mr-2 btn btn-outline-danger" type="button">
+                New tweet
+              </button>
+              <button class="btn btn-outline-dark" type="button">
+                Log out
+              </button>
+            </form>
+          </div>
+        </nav>
+
+        <div class="ml-3 mt-4 mb-4">
+          <h2 class="text-muted">Latest tweets</h2>
+        </div>
+
+        <div class="tweetList">
+          <ul class="list-group">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Modal -->
+    </div>
+
+    <script></script>
+  </body>
+</html>

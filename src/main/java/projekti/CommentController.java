@@ -13,9 +13,9 @@ public class CommentController {
     @Autowired
     CommentService commentService;
 
-    @GetMapping
+    @GetMapping("/comments")
     public String getComments(Model model){
         model.addAttribute("comments", commentService.allComments());
-        return "main";
+        return "tweets";
     }
 }

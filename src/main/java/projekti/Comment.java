@@ -18,8 +18,11 @@ public class Comment extends AbstractPersistable<Long>{
     private LocalDate createdAt;
 
     @ManyToOne
-    Tweet tweet;
-
-    @ManyToOne
     private User user;
+    
+    @ManyToOne
+    private Tweet tweet;
+
+    //@ManyToOne
+    
 }

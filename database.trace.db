@@ -1,0 +1,6 @@
+2021-10-09 09:19:16 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP TABLE TABLE[*] USER_SEURAAJAT"; expected "identifier"; SQL statement:
+drop table table user_seuraajat [42001-200]
+2021-10-09 09:19:58 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SEURAAJA_MINA_SEURAA" not found; SQL statement:
+drop table seuraaja_mina_seuraa [42102-200]
