@@ -33,11 +33,11 @@
           </div>
         </div>
         <div class="modal hidden">
-          <div class="modal-window">
+          <div class="modal-window hidden">
             <form class="form" method="POST">
               <h3 id="formTitle"></h3>
               <div class="formField marginA">
-                <label class="label">Name</label>
+                <label class="label">Username</label>
                 <input
                   type="text"
                   class="formInput"
@@ -78,10 +78,13 @@
       const signUpBtn = document.querySelector("#signUpBtn");
       const formTitle = document.querySelector("#formTitle");
       const overlay = document.querySelector(".modal");
+      const modal = document.querySelector(".modal-window");
+
       const form = document.querySelector(".form");
 
       loginBtn.addEventListener("click", () => {
         overlay.classList.remove("hidden");
+        modal.classList.remove("hidden");
         formTitle.textContent = "Login";
         form.setAttribute("action", "/login");
         console.log(form.getAttribute("action"));
@@ -89,6 +92,7 @@
 
       signUpBtn.addEventListener("click", () => {
         overlay.classList.remove("hidden");
+        modal.classList.remove("hidden");
         formTitle.textContent = "Sign up";
         form.setAttribute("action", "/signup");
         console.log(form.getAttribute("action"));
@@ -97,6 +101,7 @@
       overlay.addEventListener("click", (e) => {
         if (!e.target.closest(".modal-window")) {
           overlay.classList.add("hidden");
+          modal.classList.add("hidden");
         }
       });
 

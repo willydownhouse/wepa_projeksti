@@ -20,7 +20,10 @@ public class UserService {
         a.setName(name);
         a.setEmail(email);
         a.setPassword(password);
+        a.setTweets(new ArrayList<>());
+        a.setComments(new ArrayList<>());
         a.setSeuraajat(new ArrayList<>());
+        a.setSeuraan(new ArrayList<>());
         
 
         if(!userRepository.findAll().contains(a)){

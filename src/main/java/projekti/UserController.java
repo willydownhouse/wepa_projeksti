@@ -18,6 +18,11 @@ public class UserController {
         model.addAttribute("users", this.userService.list());
     }
 
+    @GetMapping("/users/{id}")
+    public String oneUser(Model model){
+        return "myPage";
+    }
+
     @PostMapping("/signup")
     public String create(@RequestParam String name, @RequestParam String email, @RequestParam String password){
         userService.createUser(name, email, password);
