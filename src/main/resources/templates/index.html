@@ -41,20 +41,14 @@
                 <input
                   type="text"
                   class="formInput"
-                  name="name"
+                  name="username"
                   id="name"
                   required
                 />
               </div>
-              <div class="formField marginA">
+              <div id="emailField" class="formField marginA">
                 <label class="label">Email</label>
-                <input
-                  type="email"
-                  class="formInput"
-                  name="email"
-                  id="email"
-                  required
-                />
+                <input type="email" class="formInput" name="email" id="email" />
               </div>
               <div class="formField marginA">
                 <label class="label">Password</label>
@@ -79,21 +73,33 @@
       const formTitle = document.querySelector("#formTitle");
       const overlay = document.querySelector(".modal");
       const modal = document.querySelector(".modal-window");
+      const emailField = document.getElementById("emailField");
 
       const form = document.querySelector(".form");
 
       loginBtn.addEventListener("click", () => {
+        if (!emailField.classList.contains("displayNone")) {
+          emailField.classList.add("displayNone");
+        }
         overlay.classList.remove("hidden");
         modal.classList.remove("hidden");
+
         formTitle.textContent = "Login";
+        //th:action
+        console.log("Form post request to:");
         form.setAttribute("action", "/login");
         console.log(form.getAttribute("action"));
       });
 
       signUpBtn.addEventListener("click", () => {
+        if (emailField.classList.contains("displayNone")) {
+          emailField.classList.remove("displayNone");
+        }
         overlay.classList.remove("hidden");
         modal.classList.remove("hidden");
         formTitle.textContent = "Sign up";
+        //th:action
+        console.log("Form post request to:");
         form.setAttribute("action", "/signup");
         console.log(form.getAttribute("action"));
       });
@@ -104,8 +110,6 @@
           modal.classList.add("hidden");
         }
       });
-
-      //testi
     </script>
   </body>
 </html>

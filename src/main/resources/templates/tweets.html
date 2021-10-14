@@ -20,9 +20,11 @@
       <div class="container">
         <nav class="navbar navbar-light bg-light">
           <div class="p-0 container-fluid">
-            <a class="navbar-brand" href="/users/{id}">
+            <a class="navbar-brand" th:href="@{/users/{username}(username=${username})}">
               <h3 class="text-muted">My page</h3>
             </a>
+            <p th:text="${username}">user</p>
+
             <form class="d-flex">
               <input
                 class="form-control me-2"
@@ -31,7 +33,7 @@
                 aria-label="Search"
               />
             </form>
-            <form class="d-flex">
+            <div class="d-flex">
               <button
                 id="newTweet"
                 class="mr-2 btn btn-outline-danger"
@@ -39,9 +41,15 @@
               >
                 New tweet
               </button>
-              <button class="btn btn-outline-dark" type="button">
-                Log out
-              </button>
+              <form th:action="@{/logout}" method="POST">
+                <input
+                  class="btn btn-outline-dark"
+                  type="submit"
+                  value="Logout"
+                >
+                  
+                </inp>
+              </div>
             </form>
           </div>
         </nav>
@@ -52,18 +60,18 @@
         <!-- TWEETTI LISTA -->
         <div class="tweetList">
           <ul class="list-group">
-            <li class="list-group-item border-0 bg-light">
+            <li class="list-group-item border-0 bg-light" th:each="tweet : ${tweets}">
               <div class="card">
                 <div class="card-body">
-                  <h6 id="user" class="card-subtitle mb-2 text-muted">
+                  <h6 id="user" class="card-subtitle mb-2 text-muted" th:text="${tweet.account.username}">
                     @willydownhouse
                   </h6>
 
-                  <p id="tweet" class="card- text">
+                  <p id="tweet" class="card- text" th:text="${tweet.text}">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
-                  <h6 id="date" class="card-subtitle mb-2 text-muted">
+                  <h6 id="date" class="card-subtitle mb-2 text-muted" th:text="${tweet.createdAt}">
                     10/10/2021
                   </h6>
                   <button id="commentsBtn" type="button" class="btn btn-link">
@@ -117,10 +125,10 @@
       <!-- Modal -->
       <div class="overlay hidden"></div>
       <div class="myModal hidden">
-        <form>
+        <form method="POST" th:action="@{/tweets}">
           <div class="mb-3">
             <label class="form-label text-muted">New Tweet</label>
-            <textarea class="form-control" rows="3" required></textarea>
+            <textarea name="text" class="form-control" rows="3" required></textarea>
           </div>
           <button class="mt-1 btn btn-outline-secondary" type="submit">
             Submit

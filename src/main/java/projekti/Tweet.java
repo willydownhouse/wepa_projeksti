@@ -25,11 +25,7 @@ public class Tweet extends AbstractPersistable<Long>{
     private LocalDate createdAt;
 
     @ManyToOne
-    private User user;
-
-    @OneToMany(mappedBy = "tweet")
-    private List<Comment> comments = new ArrayList<>();
-   
+    private Account account;
 
 }
 

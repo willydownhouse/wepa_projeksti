@@ -7,16 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class DefaultController {
     
-    @GetMapping("/")
-    public String showcase(Model model) {
-        return "index";
-    }
-    
-    
     
     @GetMapping("*")
     public String error(Model model) {
-        return "index";
+        return "redirect:/tweets";
     }
 }
 
