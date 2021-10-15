@@ -2,9 +2,8 @@ package projekti;
 
 
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDateTime;
+
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -22,7 +21,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 public class Tweet extends AbstractPersistable<Long>{
 
     private String text;
-    private LocalDate createdAt;
+    private String createdAt;
 
     @ManyToOne
     private Account account;

@@ -28,24 +28,13 @@ public class AccountService {
 
         Account accountAlreadyExists = accountRepository.findByUsername(username);
 
-        System.out.println("Löytyykö tiliä ennen kuin se luodaan?");
-        System.out.println(accountAlreadyExists);
 
         if(accountAlreadyExists == null){
             Account a = new Account();
             a.setUsername(username);
-            
             a.setEmail(email);
             a.setPassword(passwordEncoder.encode(password));
-            //a.setTweets(new HashSet<Tweet>());
-            //a.setComments(new HashSet<Comment>());
-            // a.setSeuraajat(new PersistentList());
-            // a.setSeuraan(new PersistentList());
-            //a.setTweets(new ArrayList<>());
-            //a.setComments(new ArrayList<>());
-            // a.setSeuraajat(new ArrayList<>());
-            // a.setSeuraan(new ArrayList<>());
-
+            
             accountRepository.save(a);
         }
 

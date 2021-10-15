@@ -60,6 +60,7 @@
         <!-- TWEETTI LISTA -->
         <div class="tweetList">
           <ul class="list-group">
+            <!-- <span th:if="${tweets.size() == 0}">No tweets available</span> -->
             <li class="list-group-item border-0 bg-light" th:each="tweet : ${tweets}">
               <div class="card">
                 <div class="card-body">
@@ -67,13 +68,13 @@
                     @willydownhouse
                   </h6>
 
-                  <p id="tweet" class="card- text" th:text="${tweet.text}">
+                  <p id="tweet" class="card-text" th:text="${tweet.text}">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
-                  <h6 id="date" class="card-subtitle mb-2 text-muted" th:text="${tweet.createdAt}">
-                    10/10/2021
-                  </h6>
+                  <p >
+                    <small id="date" class="card-subtitle mb-2 text-muted" th:text="${tweet.createdAt}">10/10/2021</small>
+                  </p>
                   <button id="commentsBtn" type="button" class="btn btn-link">
                     Comments
                   </button>
