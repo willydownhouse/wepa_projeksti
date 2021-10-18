@@ -1,5 +1,8 @@
 package projekti;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -20,9 +23,10 @@ public class AccountController {
     }
 
     @PostMapping("/signup")
-    public String create(@RequestParam String username, @RequestParam String email, @RequestParam String password){
+    public String create(@RequestParam String username, @RequestParam String email, @RequestParam String password, HttpServletRequest request) throws ServletException{
         System.out.println("create user next");
         accountService.createUser(username, email, password);
+        request.login(username, password);
         return "redirect:/tweets";
     }
 

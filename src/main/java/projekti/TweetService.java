@@ -49,5 +49,9 @@ public class TweetService {
         
     }
 
+    public Tweet getById(Long id){
+        return tweetRepository.getOne(id);
+    }
+
     
 }

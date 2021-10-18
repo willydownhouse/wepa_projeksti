@@ -16,6 +16,36 @@
     <link th:href="@{/css/myPage.css}" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    Personal page "myWall"
+    <div class="container">
+      <nav class="navbar navbar-light bg-light">
+        <div class="p-0 container-fluid">
+          <a class="navbar-brand" th:href="@{/}">
+            <h3 class="text-muted">Tweets</h3>
+          </a>
+          <p th:text="${username}">user</p>
+
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </form>
+          <div class="d-flex">
+           
+            <form th:action="@{/logout}" method="POST">
+              <input
+                class="btn btn-outline-dark"
+                type="submit"
+                value="Logout"
+              >
+                
+              </inp>
+            </div>
+          </form>
+        </div>
+      </nav>
+    </div>
   </body>
 </html>
