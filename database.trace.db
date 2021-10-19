@@ -748,3 +748,120 @@ Caused by: java.lang.NumberFormatException: 15 11:22
 	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:171)
 	at org.h2.value.ValueDate.parse(ValueDate.java:72)
 	... 141 more
+2021-10-19 10:19:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE LIKE[*] (ID BIGINT NOT NULL, ACCOUNT_ID BIGINT, TWEET_ID BIGINT, PRIMARY KEY (ID))"; expected "identifier"; SQL statement:
+create table like (id bigint not null, account_id bigint, tweet_id bigint, primary key (id)) [42001-200]
+2021-10-19 10:19:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FKT89M5CQQW1AYMP2YH8FPE033E FOREIGN KEY (ACCOUNT_ID) REFERENCES ACCOUNT"; expected "identifier"; SQL statement:
+alter table like add constraint FKt89m5cqqw1aymp2yh8fpe033e foreign key (account_id) references account [42001-200]
+2021-10-19 10:19:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FK6QC4GPP8KKXHU8ODGRCWH355F FOREIGN KEY (TWEET_ID) REFERENCES TWEET"; expected "identifier"; SQL statement:
+alter table like add constraint FK6qc4gpp8kkxhu8odgrcwh355f foreign key (tweet_id) references tweet [42001-200]
+2021-10-19 10:20:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE LIKE[*] (ID BIGINT NOT NULL, ACCOUNT_ID BIGINT, TWEET_ID BIGINT, PRIMARY KEY (ID))"; expected "identifier"; SQL statement:
+create table like (id bigint not null, account_id bigint, tweet_id bigint, primary key (id)) [42001-200]
+2021-10-19 10:20:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FKT89M5CQQW1AYMP2YH8FPE033E FOREIGN KEY (ACCOUNT_ID) REFERENCES ACCOUNT"; expected "identifier"; SQL statement:
+alter table like add constraint FKt89m5cqqw1aymp2yh8fpe033e foreign key (account_id) references account [42001-200]
+2021-10-19 10:20:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FK6QC4GPP8KKXHU8ODGRCWH355F FOREIGN KEY (TWEET_ID) REFERENCES TWEET"; expected "identifier"; SQL statement:
+alter table like add constraint FK6qc4gpp8kkxhu8odgrcwh355f foreign key (tweet_id) references tweet [42001-200]
+2021-10-19 10:20:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE LIKE[*] (ID BIGINT NOT NULL, ACCOUNT_ID BIGINT, TWEET_ID BIGINT, PRIMARY KEY (ID))"; expected "identifier"; SQL statement:
+create table like (id bigint not null, account_id bigint, tweet_id bigint, primary key (id)) [42001-200]
+2021-10-19 10:20:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FKT89M5CQQW1AYMP2YH8FPE033E FOREIGN KEY (ACCOUNT_ID) REFERENCES ACCOUNT"; expected "identifier"; SQL statement:
+alter table like add constraint FKt89m5cqqw1aymp2yh8fpe033e foreign key (account_id) references account [42001-200]
+2021-10-19 10:20:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FK6QC4GPP8KKXHU8ODGRCWH355F FOREIGN KEY (TWEET_ID) REFERENCES TWEET"; expected "identifier"; SQL statement:
+alter table like add constraint FK6qc4gpp8kkxhu8odgrcwh355f foreign key (tweet_id) references tweet [42001-200]
+2021-10-19 10:22:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE LIKE[*] (ID BIGINT NOT NULL, ACCOUNT_ID BIGINT, TWEET_ID BIGINT, PRIMARY KEY (ID))"; expected "identifier"; SQL statement:
+create table like (id bigint not null, account_id bigint, tweet_id bigint, primary key (id)) [42001-200]
+2021-10-19 10:22:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FKT89M5CQQW1AYMP2YH8FPE033E FOREIGN KEY (ACCOUNT_ID) REFERENCES ACCOUNT"; expected "identifier"; SQL statement:
+alter table like add constraint FKt89m5cqqw1aymp2yh8fpe033e foreign key (account_id) references account [42001-200]
+2021-10-19 10:22:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FK6QC4GPP8KKXHU8ODGRCWH355F FOREIGN KEY (TWEET_ID) REFERENCES TWEET"; expected "identifier"; SQL statement:
+alter table like add constraint FK6qc4gpp8kkxhu8odgrcwh355f foreign key (tweet_id) references tweet [42001-200]
+2021-10-19 10:22:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE LIKE[*] (ID BIGINT NOT NULL, ACCOUNT_ID BIGINT, TWEET_ID BIGINT, PRIMARY KEY (ID))"; expected "identifier"; SQL statement:
+create table like (id bigint not null, account_id bigint, tweet_id bigint, primary key (id)) [42001-200]
+2021-10-19 10:22:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FKT89M5CQQW1AYMP2YH8FPE033E FOREIGN KEY (ACCOUNT_ID) REFERENCES ACCOUNT"; expected "identifier"; SQL statement:
+alter table like add constraint FKt89m5cqqw1aymp2yh8fpe033e foreign key (account_id) references account [42001-200]
+2021-10-19 10:22:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FK6QC4GPP8KKXHU8ODGRCWH355F FOREIGN KEY (TWEET_ID) REFERENCES TWEET"; expected "identifier"; SQL statement:
+alter table like add constraint FK6qc4gpp8kkxhu8odgrcwh355f foreign key (tweet_id) references tweet [42001-200]
+2021-10-19 10:23:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE LIKE[*] (ID BIGINT NOT NULL, ACCOUNT_ID BIGINT, TWEET_ID BIGINT, PRIMARY KEY (ID))"; expected "identifier"; SQL statement:
+create table like (id bigint not null, account_id bigint, tweet_id bigint, primary key (id)) [42001-200]
+2021-10-19 10:23:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FKT89M5CQQW1AYMP2YH8FPE033E FOREIGN KEY (ACCOUNT_ID) REFERENCES ACCOUNT"; expected "identifier"; SQL statement:
+alter table like add constraint FKt89m5cqqw1aymp2yh8fpe033e foreign key (account_id) references account [42001-200]
+2021-10-19 10:23:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FK6QC4GPP8KKXHU8ODGRCWH355F FOREIGN KEY (TWEET_ID) REFERENCES TWEET"; expected "identifier"; SQL statement:
+alter table like add constraint FK6qc4gpp8kkxhu8odgrcwh355f foreign key (tweet_id) references tweet [42001-200]
+2021-10-19 10:23:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE LIKE[*] (ID BIGINT NOT NULL, ACCOUNT_ID BIGINT, TWEET_ID BIGINT, PRIMARY KEY (ID))"; expected "identifier"; SQL statement:
+create table like (id bigint not null, account_id bigint, tweet_id bigint, primary key (id)) [42001-200]
+2021-10-19 10:23:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FKT89M5CQQW1AYMP2YH8FPE033E FOREIGN KEY (ACCOUNT_ID) REFERENCES ACCOUNT"; expected "identifier"; SQL statement:
+alter table like add constraint FKt89m5cqqw1aymp2yh8fpe033e foreign key (account_id) references account [42001-200]
+2021-10-19 10:23:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FK6QC4GPP8KKXHU8ODGRCWH355F FOREIGN KEY (TWEET_ID) REFERENCES TWEET"; expected "identifier"; SQL statement:
+alter table like add constraint FK6qc4gpp8kkxhu8odgrcwh355f foreign key (tweet_id) references tweet [42001-200]
+2021-10-19 10:26:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE LIKE[*] (ID BIGINT NOT NULL, ACCOUNT_ID BIGINT, TWEET_ID BIGINT, PRIMARY KEY (ID))"; expected "identifier"; SQL statement:
+create table like (id bigint not null, account_id bigint, tweet_id bigint, primary key (id)) [42001-200]
+2021-10-19 10:26:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FKT89M5CQQW1AYMP2YH8FPE033E FOREIGN KEY (ACCOUNT_ID) REFERENCES ACCOUNT"; expected "identifier"; SQL statement:
+alter table like add constraint FKt89m5cqqw1aymp2yh8fpe033e foreign key (account_id) references account [42001-200]
+2021-10-19 10:26:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FK6QC4GPP8KKXHU8ODGRCWH355F FOREIGN KEY (TWEET_ID) REFERENCES TWEET"; expected "identifier"; SQL statement:
+alter table like add constraint FK6qc4gpp8kkxhu8odgrcwh355f foreign key (tweet_id) references tweet [42001-200]
+2021-10-19 10:27:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE LIKE[*] (ID BIGINT NOT NULL, ACCOUNT_ID BIGINT, TWEET_ID BIGINT, PRIMARY KEY (ID))"; expected "identifier"; SQL statement:
+create table like (id bigint not null, account_id bigint, tweet_id bigint, primary key (id)) [42001-200]
+2021-10-19 10:27:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FKT89M5CQQW1AYMP2YH8FPE033E FOREIGN KEY (ACCOUNT_ID) REFERENCES ACCOUNT"; expected "identifier"; SQL statement:
+alter table like add constraint FKt89m5cqqw1aymp2yh8fpe033e foreign key (account_id) references account [42001-200]
+2021-10-19 10:27:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FK6QC4GPP8KKXHU8ODGRCWH355F FOREIGN KEY (TWEET_ID) REFERENCES TWEET"; expected "identifier"; SQL statement:
+alter table like add constraint FK6qc4gpp8kkxhu8odgrcwh355f foreign key (tweet_id) references tweet [42001-200]
+2021-10-19 10:28:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE LIKE[*] (ID BIGINT NOT NULL, ACCOUNT_ID BIGINT, TWEET_ID BIGINT, PRIMARY KEY (ID))"; expected "identifier"; SQL statement:
+create table like (id bigint not null, account_id bigint, tweet_id bigint, primary key (id)) [42001-200]
+2021-10-19 10:28:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FKT89M5CQQW1AYMP2YH8FPE033E FOREIGN KEY (ACCOUNT_ID) REFERENCES ACCOUNT"; expected "identifier"; SQL statement:
+alter table like add constraint FKt89m5cqqw1aymp2yh8fpe033e foreign key (account_id) references account [42001-200]
+2021-10-19 10:28:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FK6QC4GPP8KKXHU8ODGRCWH355F FOREIGN KEY (TWEET_ID) REFERENCES TWEET"; expected "identifier"; SQL statement:
+alter table like add constraint FK6qc4gpp8kkxhu8odgrcwh355f foreign key (tweet_id) references tweet [42001-200]
+2021-10-19 10:30:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE LIKE[*] (ID BIGINT NOT NULL, ACCOUNT_ID BIGINT, TWEET_ID BIGINT, PRIMARY KEY (ID))"; expected "identifier"; SQL statement:
+create table like (id bigint not null, account_id bigint, tweet_id bigint, primary key (id)) [42001-200]
+2021-10-19 10:30:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FKT89M5CQQW1AYMP2YH8FPE033E FOREIGN KEY (ACCOUNT_ID) REFERENCES ACCOUNT"; expected "identifier"; SQL statement:
+alter table like add constraint FKt89m5cqqw1aymp2yh8fpe033e foreign key (account_id) references account [42001-200]
+2021-10-19 10:30:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FK6QC4GPP8KKXHU8ODGRCWH355F FOREIGN KEY (TWEET_ID) REFERENCES TWEET"; expected "identifier"; SQL statement:
+alter table like add constraint FK6qc4gpp8kkxhu8odgrcwh355f foreign key (tweet_id) references tweet [42001-200]
+2021-10-19 10:32:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE LIKE[*] (ID BIGINT NOT NULL, LIKES INTEGER, ACCOUNT_ID BIGINT, TWEET_ID BIGINT, PRIMARY KEY (ID))"; expected "identifier"; SQL statement:
+create table like (id bigint not null, likes integer, account_id bigint, tweet_id bigint, primary key (id)) [42001-200]
+2021-10-19 10:32:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FKT89M5CQQW1AYMP2YH8FPE033E FOREIGN KEY (ACCOUNT_ID) REFERENCES ACCOUNT"; expected "identifier"; SQL statement:
+alter table like add constraint FKt89m5cqqw1aymp2yh8fpe033e foreign key (account_id) references account [42001-200]
+2021-10-19 10:32:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FK6QC4GPP8KKXHU8ODGRCWH355F FOREIGN KEY (TWEET_ID) REFERENCES TWEET"; expected "identifier"; SQL statement:
+alter table like add constraint FK6qc4gpp8kkxhu8odgrcwh355f foreign key (tweet_id) references tweet [42001-200]
+2021-10-19 10:35:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE LIKE[*] (ID BIGINT NOT NULL, ACCOUNT_ID BIGINT, TWEET_ID BIGINT, PRIMARY KEY (ID))"; expected "identifier"; SQL statement:
+create table like (id bigint not null, account_id bigint, tweet_id bigint, primary key (id)) [42001-200]
+2021-10-19 10:35:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FKT89M5CQQW1AYMP2YH8FPE033E FOREIGN KEY (ACCOUNT_ID) REFERENCES ACCOUNT"; expected "identifier"; SQL statement:
+alter table like add constraint FKt89m5cqqw1aymp2yh8fpe033e foreign key (account_id) references account [42001-200]
+2021-10-19 10:35:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE LIKE[*] ADD CONSTRAINT FK6QC4GPP8KKXHU8ODGRCWH355F FOREIGN KEY (TWEET_ID) REFERENCES TWEET"; expected "identifier"; SQL statement:
+alter table like add constraint FK6qc4gpp8kkxhu8odgrcwh355f foreign key (tweet_id) references tweet [42001-200]

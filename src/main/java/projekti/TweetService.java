@@ -21,6 +21,11 @@ public class TweetService {
     @Autowired
     AccountRepository accountRepository;
 
+    public List<Tweet> getAllByAccount(String username){
+        Account account = accountRepository.findByUsername(username);
+
+        return tweetRepository.findByAccount(account);
+    }
 
     public Page<Tweet> getAll(){
 
@@ -42,6 +47,7 @@ public class TweetService {
             tweet.setText(text);
             tweet.setCreatedAt(date);
             tweet.setAccount(account);
+            tweet.setLikes(0);
 
             tweetRepository.save(tweet);
         }

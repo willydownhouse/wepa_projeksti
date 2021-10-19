@@ -1,14 +1,7 @@
 package projekti;
 
-
-
-import java.time.LocalDateTime;
-
-
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,15 +11,11 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Tweet extends AbstractPersistable<Long>{
-
-    private String text;
-    private String createdAt;
-    //
-    private Integer likes;
-
+public class Likes extends AbstractPersistable<Long>{
+    
     @ManyToOne
     private Account account;
 
+    @ManyToOne
+    private Tweet tweet;
 }
-

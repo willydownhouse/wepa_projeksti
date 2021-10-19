@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <title>Layout</title>
+  </head>
+  <body>
+    <!-- header -->
+    <div th:fragment="header(text)" class="ml-3 mt-4 mb-4">
+      <h2 th:text="${text}" class="text-muted">Header</h2>
+    </div>
+
+    <!-- tweets list -->
+    <div th:fragment="tweets" class="tweetList">
+      <ul class="list-group">
+        <li
+          class="list-group-item border-0 bg-light"
+          th:each="tweet : ${tweets}"
+        >
+          <div class="card">
+            <div class="card-body">
+              <a
+                th:href="@{/users/{username}(username=${tweet.account.username})}"
+                id="user"
+                class="btn btn-link pl-0"
+                th:text="'@' + ${tweet.account.username}"
+              >
+                @willydownhouse
+              </a>
+
+              <p id="tweet" class="card-text" th:text="${tweet.text}">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+
+              <p>
+                <small
+                  id="date"
+                  class="card-subtitle mb-2 text-muted"
+                  th:text="${tweet.createdAt}"
+                  >10/10/2021</small
+                >
+              </p>
+
+              <div class="row">
+                <div class="col-4">
+                  <!-- LIKE FORM -->
+                  <form
+                    method="POST"
+                    th:action="@{/tweets/{id}/likes(id=${tweet.id})}"
+                  >
+                    <button class="btn btn-outline-danger btn-sm" type="submit">
+                      Like
+                    </button>
+                  </form>
+                  <div
+                    th:if="${message}"
+                    th:text="${message}"
+                    th:class="${'alert ' + alertClass}"
+                  />
+                </div>
+
+                <div class="col-4">
+                  <div class="row justify-content-md-center">
+                    <div class="col-md-auto">
+                      <i class="fas fa-heart text-danger"></i>
+                    </div>
+                    <div class="col-md-auto">
+                      <p class="text-muted" th:text="${tweet.likes}">121</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                id="commentsBtn"
+                class="btn btn-link pl-0"
+                th:value="${tweet.id}"
+              >
+                Comments
+              </button>
+
+              <div class="commentFormWrapper displayNone">
+                <!-- KOMMENTTI LISTA -->
+
+                <ul id="commentList" class="list-group"></ul>
+
+                <!-- LISÄÄ KOMMENTTI FORMI -->
+                <form class="addCommentForm">
+                  <label class="form-label">Add a comment</label>
+                  <input
+                    required
+                    type="text"
+                    class="form-control"
+                    aria-describedby="passwordHelpBlock"
+                  />
+                  <button class="mt-3 btn btn-outline-secondary" type="submit">
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- tweet list without add comment form -->
+
+    <div th:fragment="tweetsNoAddCommentForm">
+      <ul class="list-group">
+        <li
+          class="list-group-item border-0 bg-light"
+          th:each="tweet : ${tweets}"
+        >
+          <div class="card">
+            <div class="card-body">
+              <a
+                th:href="@{/users/{username}(username=${tweet.account.username})}"
+                id="user"
+                class="btn btn-link pl-0"
+                th:text="'@' + ${tweet.account.username}"
+              >
+                @willydownhouse
+              </a>
+
+              <p id="tweet" class="card-text" th:text="${tweet.text}">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+
+              <p>
+                <small
+                  id="date"
+                  class="card-subtitle mb-2 text-muted"
+                  th:text="${tweet.createdAt}"
+                  >10/10/2021</small
+                >
+              </p>
+
+              <div class="row">
+                <div class="col-4">
+                  <!-- LIKE FORM -->
+                  <form
+                    method="POST"
+                    th:action="@{/tweets/{id}/likes(id=${tweet.id})}"
+                  >
+                    <button class="btn btn-outline-danger btn-sm" type="submit">
+                      Like
+                    </button>
+                  </form>
+                  <div
+                    th:if="${message}"
+                    th:text="${message}"
+                    th:class="${'alert ' + alertClass}"
+                  />
+                </div>
+
+                <div class="col-4">
+                  <div class="row justify-content-md-center">
+                    <div class="col-md-auto">
+                      <i class="fas fa-heart text-danger"></i>
+                    </div>
+                    <div class="col-md-auto">
+                      <p class="text-muted" th:text="${tweet.likes}">121</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                id="commentsBtn"
+                class="btn btn-link pl-0"
+                th:value="${tweet.id}"
+              >
+                Comments
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

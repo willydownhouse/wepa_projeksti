@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <title>Twitter | Login</title>
+    <title>Twitter</title>
     <meta charset="UTF-8" />
 
     <meta
@@ -21,18 +21,10 @@
         <nav class="navbar navbar-light bg-light">
           <div class="p-0 container-fluid">
             <a class="navbar-brand" th:href="@{/users/{username}(username=${username})}">
-              <h3 class="text-muted">MyPage</h3>
+              <button class="btn btn-secondary">MyPage</button>
             </a>
             <p th:text="${username}">user</p>
 
-           <!--  <form class="d-flex">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-            </form> -->
             <div class="d-flex">
               <button
                 id="newTweet"
@@ -54,68 +46,14 @@
           </div>
         </nav>
 
-        <div class="ml-3 mt-4 mb-4">
-          <h2 class="text-muted">Latest tweets</h2>
-        </div>
+        
+        <div th:replace="fragments/layout :: header(text='Latest tweets')"></div>
 
 
         <!-- TWEETTI LISTA -->
+        <div th:replace="fragments/layout :: tweets"></div>
 
-        <div class="tweetList">
-          <ul class="list-group">
-            <li class="list-group-item border-0 bg-light" th:each="tweet : ${tweets}">
-              <div class="card">
-                <div class="card-body">
-                  <a th:href="@{/users/{username}(username=${tweet.account.username})}" id="user" class="btn btn-link pl-0" th:text="'@' + ${tweet.account.username}">
-                    @willydownhouse
-                  </a>
-
-                  <p id="tweet" class="card-text" th:text="${tweet.text}">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <p >
-                    <small id="date" class="card-subtitle mb-2 text-muted" th:text="${tweet.createdAt}">10/10/2021</small>
-                  </p>
-
-                  <!-- GET ALL COMMENTS FOR THIS TWEET -->
-                  <!-- th:action="@{/tweets/{id}/comments(id=${tweet.id})}" method="GET" -->
-                  
-                    <button id="commentsBtn" class="btn btn-link pl-0" th:value="${tweet.id}">
-                      Comments
-                    </button>
-                  
-                  
-
-                  <div class="commentFormWrapper displayNone">
-                    <!-- KOMMENTTI LISTA -->
-                    
-                      <ul id="commentList" class="list-group">
-                        
-                      </ul>
-                    
-                    <!-- LISÄÄ KOMMENTTI FORMI -->
-                    <form class="addCommentForm">
-                      <label class="form-label">Add a comment</label>
-                      <input
-                        required
-                        type="text"
-                        class="form-control"
-                        aria-describedby="passwordHelpBlock"
-                      />
-                      <button
-                        class="mt-3 btn btn-outline-secondary"
-                        type="submit"
-                      >
-                        Submit
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
+        
       </div>
       <!-- Modal -->
       <div class="overlay hidden"></div>
@@ -131,8 +69,10 @@
         </form>
       </div>
     </div>
+    <script th:src="@{https://kit.fontawesome.com/415dfa391f.js}" crossorigin="anonymous"></script>
     <script th:inline="javascript"> var contextRoot = /*[[@{/}]]*/ '';</script>
     <!-- <script th:src="@{/js/utils.js}" defer></script> -->
     <script type="module" th:src="@{/js/tweets.js}" defer></script>
+    
   </body>
 </html>

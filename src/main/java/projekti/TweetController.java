@@ -35,22 +35,5 @@ public class TweetController {
         return "redirect:/tweets";
     }
 
-    // @GetMapping("/tweets/{id}/comments")
-    // public String tweetComments(Model model, @PathVariable Long id){
-    //     Tweet tweet = tweetService.getById(id);
-
-
-    //     System.out.println("Tweet");
-    //     System.out.println(tweet);
-        
-    //     model.addAttribute("comments", commentService.allComments(tweet));
-    //     return "tweets";
-    // }
-
-    // @PostMapping("/tweets/{id}/comments")
-    // public String addComment(@PathVariable Long id){
-    //     return "redirect:/tweets";
-    // }
-
     
 }

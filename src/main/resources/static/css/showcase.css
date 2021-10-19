@@ -1,8 +1,11 @@
 * {
-  font-family: sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
 }
 
 a {
@@ -66,15 +69,7 @@ h3 {
   padding: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-size: 30px;
-  letter-spacing: 3px;
-  font-weight: bold;
-}
-.loginCont {
+  justify-content: flex-end;
 }
 
 .showcase {
@@ -90,6 +85,7 @@ h3 {
 
 .parag {
   color: white;
+  letter-spacing: 2px;
 }
 
 .title {
@@ -131,9 +127,6 @@ h3 {
   background-color: transparent;
 }
 
-#formTitle {
-}
-
 .formField {
   display: flex;
   flex-direction: column;
@@ -159,4 +152,25 @@ h3 {
 
 .displayNone {
   display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .showcaseContent {
+    transform: translate(-50%, -50%);
+  }
+
+  .modal-window {
+    width: 90%;
+  }
+
+  .showcase {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .showcaseContent {
+    transform: translate(0%, 0%);
+  }
 }

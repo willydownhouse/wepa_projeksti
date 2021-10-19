@@ -16,36 +16,53 @@
     <link th:href="@{/css/myPage.css}" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div class="container">
-      <nav class="navbar navbar-light bg-light">
-        <div class="p-0 container-fluid">
-          <a class="navbar-brand" th:href="@{/}">
-            <h3 class="text-muted">Tweets</h3>
-          </a>
-          <p th:text="${username}">user</p>
+    <div class="pageWrapper">
 
-          <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-          </form>
-          <div class="d-flex">
-           
-            <form th:action="@{/logout}" method="POST">
+      <div class="container">
+        <nav class="navbar navbar-light bg-light">
+          <div class="p-0 container-fluid">
+            <a class="navbar-brand" th:href="@{/}">
+              <button class="btn btn-secondary">Feed</button>
+            </a>
+            <p th:text="${username}">user</p>
+  
+            <form class="d-flex">
               <input
-                class="btn btn-outline-dark"
-                type="submit"
-                value="Logout"
-              >
-                
-              </inp>
-            </div>
-          </form>
+                class="form-control me-2"
+                type="search"
+                placeholder="Search friends"
+                aria-label="Search"
+              />
+            </form>
+            <div class="d-flex">
+             
+              <form th:action="@{/logout}" method="POST">
+                <input
+                  class="btn btn-outline-dark"
+                  type="submit"
+                  value="Logout"
+                >
+                  
+                </inp>
+              </div>
+            </form>
+          </div>
+        </nav>
+
+        <!-- PROFILE  -->
+        <div class="profile ml-3">
+            <div class="img"></div>
         </div>
-      </nav>
+        
+  
+        <div th:replace="fragments/layout :: header(text='My tweets')"></div>
+  
+        <div th:replace="fragments/layout :: tweetsNoAddCommentForm"></div>
+      </div>
+      
     </div>
+
+    <script th:src="@{https://kit.fontawesome.com/415dfa391f.js}" crossorigin="anonymous"></script>
+    
   </body>
 </html>
