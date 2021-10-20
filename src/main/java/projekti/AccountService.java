@@ -24,6 +24,10 @@ public class AccountService {
         return accountRepository.findAll();
     }
 
+    public List<Account> listByUsername(String keyword){
+        return accountRepository.findByUsernameContaining(keyword);
+    }
+
     public void createUser(String username, String email, String password){
 
         Account accountAlreadyExists = accountRepository.findByUsername(username);

@@ -7,12 +7,61 @@
 .profile {
   height: 30vh;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 3fr;
   grid-template-rows: 1fr;
 }
 
 .img {
   grid-column: 1/2;
-  background: url("https://media.istockphoto.com/photos/mr-who-picture-id619400810?b=1&k=20&m=619400810&s=170667a&w=0&h=FRZ7iMcLwzAn7iN65kgf3f68qZ9kxUBWGvfOq38f26Q=")
-    no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.profileContent {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 7;
+}
+
+.myModal {
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  max-height: 400px;
+  overflow-y: scroll;
+  background: transparent;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.myModal::-webkit-scrollbar {
+  display: none;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.displayNone {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .myModal {
+    width: 90%;
+  }
 }

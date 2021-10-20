@@ -39,4 +39,6 @@ public class AccountController {
         model.addAttribute("tweets", tweetService.getAllByAccount(username));
         return "myPage";
     }
+
+    
 }

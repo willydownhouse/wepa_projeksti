@@ -60,3 +60,35 @@ const buildCommentElement = (data) => {
 
   return html;
 };
+
+const buildUserList = (data) => {
+  const html = data
+    .map((user) => {
+      return `<a href="/users/${user.username}" class="list-group-item list-group-item-action">
+      <button class="btn btn-link">@${user.username}</button>
+      
+      </a>`;
+    })
+    .join(" ");
+
+  return html;
+};
+
+export const fetchUsers = (url, el) => {
+  fetch(url, {})
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+
+      if (data.length == 0) {
+        el.innerHTML = `<div class='alert alert-danger' role='alert'>
+        No users found. Please try again!
+      </div>`;
+      } else {
+        el.innerHTML = buildUserList(data);
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};

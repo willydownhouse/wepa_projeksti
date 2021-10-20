@@ -1,13 +1,31 @@
-import { fetchComments, addComment } from "./utils.js";
+import { fetchComments, addComment, fetchUsers } from "./utils.js";
 
-const overlay = document.querySelector(".overlay");
-const myModal = document.querySelector(".myModal");
-const newTweetBtn = document.getElementById("newTweet");
 const allCommentsButtons = document.querySelectorAll("#commentsBtn");
 const allCommentFormWrappers = document.querySelectorAll(".commentFormWrapper");
 const addCommenttForms = document.querySelectorAll(".addCommentForm");
+const searchUsersForm = document.getElementById("searchUsersForm");
+const searchUsersInput = document.getElementById("searchUsersInput");
+const modal = document.querySelector(".myModal");
+const overlay = document.querySelector(".overlay");
+const userList = document.getElementById("userList");
 
 let clickedTweet;
+
+//SEARCH USERS FORM
+
+searchUsersForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  overlay.classList.remove("hidden");
+  modal.classList.remove("hidden");
+
+  var url = contextRoot + `users?username=${searchUsersInput.value}`;
+  fetchUsers(url, userList);
+});
+
+overlay.addEventListener("click", () => {
+  overlay.classList.add("hidden");
+  modal.classList.add("hidden");
+});
 
 // SHOW COMMENTS
 
@@ -62,17 +80,4 @@ addCommenttForms.forEach((form) => {
 
     e.target.querySelector(".form-control").value = "";
   });
-});
-
-// NEW TWEET FORM
-
-newTweetBtn.addEventListener("click", () => {
-  overlay.classList.remove("hidden");
-  myModal.classList.remove("hidden");
-  myModal.classList.add("showModal");
-});
-overlay.addEventListener("click", () => {
-  overlay.classList.add("hidden");
-  myModal.classList.add("hidden");
-  myModal.classList.remove("showModal");
 });

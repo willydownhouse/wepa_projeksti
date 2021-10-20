@@ -1,11 +1,11 @@
 .pageWrapper {
-  height: 100vh;
+  min-height: 100vh;
   background: #f9f9f9;
   position: relative;
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -16,7 +16,7 @@
 }
 
 .myModal {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   width: 550px;
