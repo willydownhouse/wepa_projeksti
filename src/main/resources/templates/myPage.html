@@ -21,14 +21,29 @@
       <div class="myModal hidden">
         <ul id="userList" class="list-group"></ul>
       </div>
+      <div class="addPictureModal hidden">
+        
+          <form th:action="@{/users/{username}/pictures(username=${username})}" method="POST" enctype="multipart/form-data">
+            <input class="mb-2" type="file" name="file" />
+            <input type="submit" class="btn btn-outline-secondary" value="Send!"/>
+        </form>
+        
+      </div>
 
       <div class="container">
         <nav class="navbar navbar-light bg-light">
           <div class="p-0 container-fluid">
-            <a class="navbar-brand" th:href="@{/}">
-              <button class="btn btn-secondary">Feed</button>
-            </a>
-            <!-- <p th:text="${username}">user</p> -->
+            
+            <div class="btn-group">
+              <a class="btn btn-outline-secondary" th:href="@{/}">
+                Feed
+              </a>
+              
+              <button id="addPhotoModal" class="btn btn-outline-secondary">Photo</button>
+            </div>
+              
+            
+            
             
   
             <form id="searchUsersForm" class="d-flex">
@@ -70,6 +85,8 @@
               <h2 class="text-muted" th:text="'Welcome to '+ ${username} + '`s page'">Username</h2>
             </div>
         </div>
+
+        
         
   
         <div th:replace="fragments/layout :: header(text='My tweets')"></div>

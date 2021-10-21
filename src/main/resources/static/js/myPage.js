@@ -8,8 +8,16 @@ const searchUsersInput = document.getElementById("searchUsersInput");
 const modal = document.querySelector(".myModal");
 const overlay = document.querySelector(".overlay");
 const userList = document.getElementById("userList");
+const addPhotoModalBtn = document.getElementById("addPhotoModal");
+const addPhotoModal = document.querySelector(".addPictureModal");
 
 let clickedTweet;
+//ADD PHOTO MODAL
+
+addPhotoModalBtn.addEventListener("click", () => {
+  overlay.classList.remove("hidden");
+  addPhotoModal.classList.remove("hidden");
+});
 
 //SEARCH USERS FORM
 
@@ -25,6 +33,7 @@ searchUsersForm.addEventListener("submit", (e) => {
 overlay.addEventListener("click", () => {
   overlay.classList.add("hidden");
   modal.classList.add("hidden");
+  addPhotoModal.classList.add("hidden");
 });
 
 // SHOW COMMENTS
