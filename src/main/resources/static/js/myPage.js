@@ -14,21 +14,25 @@ const addPhotoModal = document.querySelector(".addPictureModal");
 let clickedTweet;
 //ADD PHOTO MODAL
 
-addPhotoModalBtn.addEventListener("click", () => {
-  overlay.classList.remove("hidden");
-  addPhotoModal.classList.remove("hidden");
-});
+if (addPhotoModalBtn) {
+  addPhotoModalBtn.addEventListener("click", () => {
+    overlay.classList.remove("hidden");
+    addPhotoModal.classList.remove("hidden");
+  });
+}
 
 //SEARCH USERS FORM
 
-searchUsersForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  overlay.classList.remove("hidden");
-  modal.classList.remove("hidden");
+if (searchUsersForm) {
+  searchUsersForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    overlay.classList.remove("hidden");
+    modal.classList.remove("hidden");
 
-  var url = contextRoot + `users?username=${searchUsersInput.value}`;
-  fetchUsers(url, userList);
-});
+    var url = contextRoot + `users?username=${searchUsersInput.value}`;
+    fetchUsers(url, userList);
+  });
+}
 
 overlay.addEventListener("click", () => {
   overlay.classList.add("hidden");

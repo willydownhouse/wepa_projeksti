@@ -9,17 +9,27 @@
 }
 
 .profile {
-  height: 25vh;
+  height: 35vh;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr;
 }
 
-.img {
-  grid-column: 1/2;
+.imgWrapper {
+  grid-column: 2/3;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  overflow: hidden;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 3px;
 }
 
 .profileContent {
@@ -56,18 +66,23 @@
 }
 
 .addPictureModal {
-  padding: 20px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 300px;
-  height: 150px;
+  min-height: 100px;
   z-index: 10;
   background: #f9f9f9;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.addProfilePicForm {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
 }
 
 .hidden {
@@ -86,5 +101,22 @@
 
   .addPictureModal {
     width: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .profile {
+    height: 50vh;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  #title {
+    font-size: 30px;
+    margin-top: 15px;
+  }
+
+  .d-flex {
+    margin-bottom: 8px;
   }
 }

@@ -1,5 +1,7 @@
 package projekti;
 
+import java.security.Principal;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
@@ -21,6 +23,9 @@ public class AccountController {
     @Autowired 
     private TweetService tweetService;
 
+    @Autowired
+    PictureService pictureService;
+
     @GetMapping("/login")
     public String showLoginPage(){
         return "index";
@@ -35,8 +40,11 @@ public class AccountController {
     }
 
     @GetMapping("/users/{username}")
-    public String showMyPage(Model model, @PathVariable String username){
+    public String showMyPage(Model model, @PathVariable String username, Principal principal){
         model.addAttribute("tweets", tweetService.getAllByAccount(username));
+        model.addAttribute("currentUser", principal.getName());
+        
+        model.addAttribute("profilePicture", pictureService.getUserPicture(username));
         return "myPage";
     }
 
