@@ -48,8 +48,8 @@ const buildCommentElement = (data) => {
                   <h6
                     id="date"
                     class="card-subtitle mb-2 text-muted"
-                  ><small>${comment.createdAt.split("T")[0]}
-                  ${comment.createdAt.split("T")[1].substring(0, 5)}</small>
+                  ><small>
+                  ${comment.createdAt}</small>
                     
                   </h6>
                 </div>
@@ -60,6 +60,8 @@ const buildCommentElement = (data) => {
 
   return html;
 };
+
+//.split("T")[1].substring(0, 5)
 
 const buildUserList = (data) => {
   const html = data
@@ -90,5 +92,21 @@ export const fetchUsers = (url, el) => {
     })
     .catch((err) => {
       console.log(err);
+    });
+};
+
+export const deleteTweet = (url, id) => {
+  fetch(url, {
+    method: "DELETE",
+  })
+    .then((res) => {
+      console.log(res);
+
+      if (res.ok) {
+        location.reload();
+      }
+    })
+    .catch((err) => {
+      console.log("There was error deleting this tweet");
     });
 };

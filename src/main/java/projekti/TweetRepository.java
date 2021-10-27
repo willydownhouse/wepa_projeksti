@@ -12,4 +12,5 @@ public interface TweetRepository extends JpaRepository<Tweet, Long>{
 
     @EntityGraph(attributePaths = {"account"})
     List<Tweet> findAll();
+
 }

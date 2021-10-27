@@ -12,6 +12,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class TweetService {
@@ -57,6 +58,12 @@ public class TweetService {
 
     public Tweet getById(Long id){
         return tweetRepository.getOne(id);
+    }
+
+    @Transactional
+    public void deleteOne(Long id){
+        Tweet tweet = tweetRepository.getOne(id);
+        tweetRepository.delete(tweet);
     }
 
     

@@ -43,6 +43,7 @@ public class AccountController {
     public String showMyPage(Model model, @PathVariable String username, Principal principal){
         model.addAttribute("tweets", tweetService.getAllByAccount(username));
         model.addAttribute("currentUser", principal.getName());
+        model.addAttribute("thisUsersPage", username);
         
         model.addAttribute("profilePicture", pictureService.getUserPicture(username));
         return "myPage";

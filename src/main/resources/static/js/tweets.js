@@ -1,4 +1,4 @@
-import { fetchComments, addComment } from "./utils.js";
+import { fetchComments, addComment, deleteTweet } from "./utils.js";
 
 const overlay = document.querySelector(".overlay");
 const myModal = document.querySelector(".myModal");
@@ -6,8 +6,18 @@ const newTweetBtn = document.getElementById("newTweet");
 const allCommentsButtons = document.querySelectorAll("#commentsBtn");
 const allCommentFormWrappers = document.querySelectorAll(".commentFormWrapper");
 const addCommenttForms = document.querySelectorAll(".addCommentForm");
+const allDeleteTweetBtns = document.querySelectorAll("#deleteTweetBtn");
 
 let clickedTweet;
+
+//DELETE TWEET
+
+allDeleteTweetBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    var url = contextRoot + `tweets/${e.target.value}`;
+    deleteTweet(url, e.target.value);
+  });
+});
 
 // SHOW COMMENTS
 
@@ -53,7 +63,7 @@ addCommenttForms.forEach((form) => {
 
     const commentObject = {
       text: comment,
-      createdAt: new Date().toISOString(),
+      createdAt: new Date().toUTCString(),
     };
 
     const commentsListElement = e.target.previousElementSibling;

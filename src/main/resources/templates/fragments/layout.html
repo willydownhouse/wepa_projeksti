@@ -42,9 +42,12 @@
                 >
               </p>
 
+              <!-- th:switch="${currentUser}" th:case="null" -->
+
               <div class="row">
                 <div class="col-4">
                   <!-- LIKE FORM -->
+
                   <form
                     method="POST"
                     th:action="@{/tweets/{id}/likes(id=${tweet.id})}"
@@ -53,11 +56,6 @@
                       Like
                     </button>
                   </form>
-                  <div
-                    th:if="${message}"
-                    th:text="${message}"
-                    th:class="${'alert ' + alertClass}"
-                  />
                 </div>
 
                 <div class="col-4">
@@ -69,6 +67,17 @@
                       <p class="text-muted" th:text="${tweet.likes}">121</p>
                     </div>
                   </div>
+                </div>
+                <div class="col-4" th:switch="${currentUser}">
+                  <button
+                    th:case="${tweet.account.username}"
+                    id="deleteTweetBtn"
+                    class="btn btn-danger btn-sm"
+                    th:value="${tweet.id}"
+                  >
+                    Delete
+                  </button>
+                  <div th:case="*"></div>
                 </div>
               </div>
 

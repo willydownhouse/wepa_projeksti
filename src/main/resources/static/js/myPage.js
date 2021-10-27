@@ -1,4 +1,4 @@
-import { fetchComments, addComment, fetchUsers } from "./utils.js";
+import { fetchComments, addComment, fetchUsers, deleteTweet } from "./utils.js";
 
 const allCommentsButtons = document.querySelectorAll("#commentsBtn");
 const allCommentFormWrappers = document.querySelectorAll(".commentFormWrapper");
@@ -11,7 +11,19 @@ const userList = document.getElementById("userList");
 const addPhotoModalBtn = document.getElementById("addPhotoModal");
 const addPhotoModal = document.querySelector(".addPictureModal");
 
+const allDeleteTweetBtns = document.querySelectorAll("#deleteTweetBtn");
+
 let clickedTweet;
+
+//DELETE TWEET
+
+allDeleteTweetBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    var url = contextRoot + `tweets/${e.target.value}`;
+    deleteTweet(url, e.target.value);
+  });
+});
+
 //ADD PHOTO MODAL
 
 if (addPhotoModalBtn) {
