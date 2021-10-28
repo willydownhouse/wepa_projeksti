@@ -23,7 +23,7 @@
             <a class="navbar-brand" th:href="@{/users/{username}(username=${currentUser})}">
               <button class="btn btn-outline-secondary">MyPage</button>
             </a>
-            <p th:text="${currentUser}">user</p>
+            <p th:text="${currentUser} + ' is logged in'">user</p>
 
             <div class="d-flex">
               <button
@@ -52,6 +52,8 @@
 
         <!-- TWEETTI LISTA -->
         <div th:replace="fragments/layout :: tweets"></div>
+
+        <div th:replace="fragments/layout :: paginationForm"></div>
 
         
       </div>

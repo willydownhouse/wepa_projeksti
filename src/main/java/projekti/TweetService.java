@@ -1,10 +1,10 @@
 package projekti;
 
 import java.security.Principal;
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
+
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -28,11 +28,17 @@ public class TweetService {
         return tweetRepository.findByAccount(account);
     }
 
-    public Page<Tweet> getAll(){
+    
+    public Page<Tweet> getAll(String page, Integer tweetsOnOnePage){
+        Integer pageAsInt = Integer.parseInt(page);
 
-        //sorting
-        Pageable pageable = PageRequest.of(0, 10, Sort.by("createdAt").descending());
+        Pageable pageable = PageRequest.of(pageAsInt, tweetsOnOnePage, Sort.by("createdAt").descending());
+        
         return tweetRepository.findAll(pageable);
+    }
+
+    public Long tweetCount(){
+        return tweetRepository.count();
     }
 
     public void createTweet(String text, Principal principal){

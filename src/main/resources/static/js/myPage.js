@@ -1,4 +1,10 @@
-import { fetchComments, addComment, fetchUsers, deleteTweet } from "./utils.js";
+import {
+  fetchComments,
+  addComment,
+  fetchUsers,
+  deleteTweet,
+  modifyDate,
+} from "./utils.js";
 
 const allCommentsButtons = document.querySelectorAll("#commentsBtn");
 const allCommentFormWrappers = document.querySelectorAll(".commentFormWrapper");
@@ -96,7 +102,7 @@ addCommenttForms.forEach((form) => {
 
     const commentObject = {
       text: comment,
-      createdAt: new Date().toISOString(),
+      createdAt: modifyDate(),
     };
 
     const commentsListElement = e.target.previousElementSibling;

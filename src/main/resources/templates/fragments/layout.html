@@ -44,8 +44,8 @@
 
               <!-- th:switch="${currentUser}" th:case="null" -->
 
-              <div class="row">
-                <div class="col-4">
+              <div th:switch="${thisUsersPage}" class="row">
+                <div th:case="null" class="col-4">
                   <!-- LIKE FORM -->
 
                   <form
@@ -112,6 +112,38 @@
           </div>
         </li>
       </ul>
+    </div>
+
+    <!-- PAGINATION FORM -->
+
+    <div th:fragment="paginationForm" th:switch="${pages}">
+      <div th:case="1"></div>
+      <div th:case="*" class="row mb-3">
+        <div class="col-4"></div>
+        <div class="col-4 d-flex justify-content-center">
+          <form th:action="@{/tweets}" method="get">
+            <button
+              class="btn btn-outline-dark btn-sm"
+              type="submit"
+              th:value="${currentPage == 0} ? ${currentPage} : ${currentPage - 1}"
+              name="page"
+              th:disabled="${currentPage == 0}"
+            >
+              prev
+            </button>
+            <button
+              class="btn btn-outline-dark btn-sm"
+              type="submit"
+              th:value="${currentPage == (pages -1)} ? ${currentPage} : ${currentPage + 1}"
+              name="page"
+              th:disabled="${currentPage == (pages -1)}"
+            >
+              next
+            </button>
+          </form>
+        </div>
+        <div class="col-4"></div>
+      </div>
     </div>
   </body>
 </html>

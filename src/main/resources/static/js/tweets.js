@@ -1,4 +1,4 @@
-import { fetchComments, addComment, deleteTweet } from "./utils.js";
+import { fetchComments, addComment, deleteTweet, modifyDate } from "./utils.js";
 
 const overlay = document.querySelector(".overlay");
 const myModal = document.querySelector(".myModal");
@@ -63,7 +63,7 @@ addCommenttForms.forEach((form) => {
 
     const commentObject = {
       text: comment,
-      createdAt: new Date().toUTCString(),
+      createdAt: modifyDate(),
     };
 
     const commentsListElement = e.target.previousElementSibling;

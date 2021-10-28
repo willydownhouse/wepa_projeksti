@@ -61,8 +61,6 @@ const buildCommentElement = (data) => {
   return html;
 };
 
-//.split("T")[1].substring(0, 5)
-
 const buildUserList = (data) => {
   const html = data
     .map((user) => {
@@ -109,4 +107,17 @@ export const deleteTweet = (url, id) => {
     .catch((err) => {
       console.log("There was error deleting this tweet");
     });
+};
+
+export const modifyDate = () => {
+  const now = new Date();
+  const offsetMs = now.getTimezoneOffset() * 60 * 1000;
+  const dateLocal = new Date(now.getTime() - offsetMs);
+
+  return dateLocal
+    .toISOString()
+    .slice(0, 19)
+    .replace(/-/g, "-")
+    .replace("T", " ")
+    .substring(0, 16);
 };
