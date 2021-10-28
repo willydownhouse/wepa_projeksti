@@ -26,7 +26,13 @@ public class PictureController {
 
     @PostMapping("/users/{username}/pictures")
     public String savePicture(@PathVariable String username ,@RequestParam("file") MultipartFile file) throws IOException{
-        pictureService.addNewPicture(username, file);
+
+        try{
+            pictureService.addNewPicture(username, file);
+        }catch(Exception e){
+            return "tweet";
+        }
+        
         return "redirect:/users/{username}";
     }
 }
