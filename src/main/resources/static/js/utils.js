@@ -93,7 +93,7 @@ export const fetchUsers = (url, el) => {
     });
 };
 
-export const deleteTweet = (url, id) => {
+export const deleteTweet = (url) => {
   fetch(url, {
     method: "DELETE",
   })
@@ -101,7 +101,7 @@ export const deleteTweet = (url, id) => {
       console.log(res);
 
       if (res.ok) {
-        location.reload();
+        window.location = "/tweets";
       }
     })
     .catch((err) => {

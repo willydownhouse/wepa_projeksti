@@ -5,6 +5,8 @@ import java.security.Principal;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -45,11 +47,15 @@ public class TweetController {
     public String allTweets(Model model, Principal principal, @RequestParam(defaultValue = "0") String page){
         String username = principal.getName();
         Double tweetCount = tweetService.tweetCount() * 1.0;
-        Integer tweetsOnOnePage = 5;
+        Integer tweetsOnOnePage = 3;
         Long pages = (long) Math.ceil(tweetCount / tweetsOnOnePage);
 
         System.out.println("PAGES");
         System.out.println(pages);
+
+
+        System.out.println("PAGE");
+        System.out.println(page);
 
 
         System.out.println("Current user");
@@ -72,13 +78,26 @@ public class TweetController {
         return "redirect:/tweets";
     }
 
+    // @DeleteMapping("/tweets/{id}")
+    // public String deleteTweet(@PathVariable Long id)
+    // {   
+    //     likesService.deleteLikes(id);
+    //     commentService.deleteTweetComments(id);
+    //     tweetService.deleteOne(id);
+
+    //     return "tweets";
+        
+    // }
+
     @DeleteMapping("/tweets/{id}")
-    public String deleteTweet(@PathVariable Long id)
+    public ResponseEntity<String> deleteTweet(@PathVariable Long id)
     {   
         likesService.deleteLikes(id);
         commentService.deleteTweetComments(id);
         tweetService.deleteOne(id);
-        return "tweets";
+
+        return ResponseEntity.status(HttpStatus.OK).body(String.format("Tweet succesfully deleted"));
+        
     }
 
     

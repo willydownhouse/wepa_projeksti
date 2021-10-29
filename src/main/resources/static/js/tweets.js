@@ -15,7 +15,7 @@ let clickedTweet;
 allDeleteTweetBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     var url = contextRoot + `tweets/${e.target.value}`;
-    deleteTweet(url, e.target.value);
+    deleteTweet(url);
   });
 });
 
