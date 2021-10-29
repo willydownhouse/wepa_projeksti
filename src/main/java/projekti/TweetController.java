@@ -47,7 +47,7 @@ public class TweetController {
     public String allTweets(Model model, Principal principal, @RequestParam(defaultValue = "0") String page){
         String username = principal.getName();
         Double tweetCount = tweetService.tweetCount() * 1.0;
-        Integer tweetsOnOnePage = 3;
+        Integer tweetsOnOnePage = 8;
         Long pages = (long) Math.ceil(tweetCount / tweetsOnOnePage);
 
         System.out.println("PAGES");
