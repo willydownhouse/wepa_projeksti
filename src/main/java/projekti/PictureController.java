@@ -21,6 +21,8 @@ public class PictureController {
     @GetMapping("/users/{username}/pictures")
     @ResponseBody
     public byte[] usersPictures(@PathVariable String username){
+
+        System.out.println("Getting picture");
         return pictureService.getUserPicture(username).getContent();
     }
 

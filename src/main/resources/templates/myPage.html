@@ -104,7 +104,7 @@
 
             <div class="imgWrapper" th:switch="${profilePicture}">
               <i th:case="null" class="fas fa-user-alt fa-7x"></i>
-              <img th:case="*" class="img" th:src="@{/users/{username}/pictures(username=${thisUsersPage})}"/>
+              <img th:case="*" class="img" th:src="@{/users/{username}/pictures(username=${thisUsersPage})}" th:alt="profile picture"/>
               
             </div>
 
