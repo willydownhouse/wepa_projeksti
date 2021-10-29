@@ -18,7 +18,7 @@ public class PictureService {
     @Autowired
     AccountRepository accountRepository;
 
-    
+    @Transactional
     public Picture getUserPicture(String username){
         Account account = accountRepository.findByUsername(username);
 
