@@ -81,13 +81,25 @@
                 </div>
               </div>
 
-              <button
-                id="commentsBtn"
-                class="btn btn-link pl-0"
-                th:value="${tweet.id}"
-              >
-                Comments
-              </button>
+              <div id="haloo" class="row">
+                <div class="col-6">
+                  <button
+                    id="commentsBtn"
+                    class="btn btn-link pl-0"
+                    th:value="${tweet.id}"
+                  >
+                    Comments
+                  </button>
+                </div>
+                <div
+                  id="numOfComments"
+                  class="col-6 d-flex align-items-center text-muted"
+                  th:value="${tweet.comments}"
+                  th:text="${tweet.comments}"
+                >
+                  2
+                </div>
+              </div>
 
               <div class="commentFormWrapper displayNone">
                 <!-- KOMMENTTI LISTA -->

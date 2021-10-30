@@ -55,6 +55,7 @@ public class TweetService {
             tweet.setCreatedAt(date);
             tweet.setAccount(account);
             tweet.setLikes(0);
+            tweet.setComments(0);
 
             tweetRepository.save(tweet);
         }

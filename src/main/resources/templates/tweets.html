@@ -31,7 +31,7 @@
                 class="mr-2 btn btn-outline-danger"
                 type="button"
               >
-                New tweet
+                New weet
               </button>
               <form th:action="@{/logout}" method="POST">
                 <input
@@ -47,7 +47,7 @@
         </nav>
 
         
-        <div th:replace="fragments/layout :: header(text='Latest tweets')"></div>
+        <div th:replace="fragments/layout :: header(text='Latest weets')"></div>
 
 
         <!-- TWEETTI LISTA -->
@@ -63,7 +63,7 @@
       <div class="myModal hidden">
         <form method="POST" th:action="@{/tweets}">
           <div class="mb-3">
-            <label class="form-label text-muted">New Tweet</label>
+            <label class="form-label text-muted">New weet</label>
             <textarea name="text" class="form-control" rows="3" required></textarea>
           </div>
           <button class="mt-1 btn btn-outline-secondary" type="submit">
@@ -74,7 +74,8 @@
     </div>
     <script th:src="@{https://kit.fontawesome.com/415dfa391f.js}" crossorigin="anonymous"></script>
     <script th:inline="javascript"> var contextRoot = /*[[@{/}]]*/ '';</script>
-    <script type="module" th:src="@{/js/tweets.js}" defer></script>
+    <script type="module" th:src="@{/js/tweets.js}" ></script>
+    <script type="module" th:src="@{/js/main.js}" ></script>
     
   </body>
 </html>

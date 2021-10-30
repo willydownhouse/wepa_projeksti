@@ -24,6 +24,8 @@ public class Tweet extends AbstractPersistable<Long>{
     private String createdAt;
     //
     private Integer likes;
+    private Integer comments;
+    
 
     @ManyToOne
     private Account account;

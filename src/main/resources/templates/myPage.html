@@ -114,7 +114,7 @@
         
         
   
-        <div th:replace="fragments/layout :: header(text='My tweets')"></div>
+        <div th:replace="fragments/layout :: header(text='My weets')"></div>
   
         <div th:replace="fragments/layout :: tweets"></div>
       </div>
@@ -126,6 +126,7 @@
     <script th:inline="javascript"> var contextRoot = /*[[@{/}]]*/ '';</script>
 
     <script type="module" th:src="@{/js/myPage.js}" ></script>
+    <script type="module" th:src="@{/js/main.js}" ></script>
     
   </body>
 </html>

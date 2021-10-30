@@ -27,6 +27,8 @@ public class CommentService {
         comment.setAccount(account);
         comment.setTweet(tweet);
 
+        tweet.setComments(tweet.getComments() + 1);
+
         return commentRepository.save(comment);   
     }
 
