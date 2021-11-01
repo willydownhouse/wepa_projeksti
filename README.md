@@ -1,4 +1,4 @@
 # wepa_projeksti
 
 App running:
-https://morning-earth-66742.herokuapp.com/
+https://blooming-meadow-29956.herokuapp.com/
