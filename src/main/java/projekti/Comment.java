@@ -1,5 +1,5 @@
 package projekti;
-import java.time.LocalDate;
+
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;

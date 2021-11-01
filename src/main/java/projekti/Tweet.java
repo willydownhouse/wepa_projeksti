@@ -2,12 +2,12 @@ package projekti;
 
 
 
-import java.time.LocalDateTime;
+
 
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

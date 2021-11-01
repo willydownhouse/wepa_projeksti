@@ -15,11 +15,28 @@
       rel="stylesheet"
     />
 
+    <!-- <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    /> -->
+
     <link th:href="@{/css/showcase.css}" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <div class="cont">
       <div class="bgphoto">
+        <!-- ERROR -->
+        <div
+          class="errorOverlay"
+          th:classappend="${errorMessage} ? '' : 'hidden'"
+        ></div>
+
+        <div
+          class="errorMsg"
+          th:classappend="${errorMessage} ? '' : 'hidden'"
+          th:if="${errorMessage}"
+          th:text="${errorMessage}"
+        ></div>
         <header class="header">
           <!-- <div class="logo"></div> -->
           <div class="loginCont">
@@ -75,8 +92,11 @@
       const overlay = document.querySelector(".modal");
       const modal = document.querySelector(".modal-window");
       const emailField = document.getElementById("emailField");
+      const emailInput = document.getElementById("email");
 
       const form = document.querySelector(".form");
+      const errorOverlay = document.querySelector(".errorOverlay");
+      const errMessage = document.querySelector(".errorMsg");
 
       loginBtn.addEventListener("click", () => {
         if (!emailField.classList.contains("displayNone")) {
@@ -93,6 +113,7 @@
         if (emailField.classList.contains("displayNone")) {
           emailField.classList.remove("displayNone");
         }
+        //emailInput.setAttribute("required", "true");
         overlay.classList.remove("hidden");
         modal.classList.remove("hidden");
         formTitle.textContent = "Sign up";
@@ -100,10 +121,17 @@
         form.setAttribute("action", "/signup");
       });
 
+      errorOverlay.addEventListener("click", () => {
+        errMessage.classList.add("hidden");
+        errorOverlay.classList.add("hidden");
+        //emailInput.setAttribute("required", "false");
+      });
+
       overlay.addEventListener("click", (e) => {
         if (!e.target.closest(".modal-window")) {
           overlay.classList.add("hidden");
           modal.classList.add("hidden");
+          //emailInput.setAttribute("required", "false");
         }
       });
     </script>

@@ -1,15 +1,12 @@
 package projekti;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
-import org.hibernate.collection.internal.PersistentList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.i18n.AcceptHeaderLocaleContextResolver;
+
 
 @Service
 public class AccountService {
