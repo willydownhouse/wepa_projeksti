@@ -27,20 +27,6 @@ public class TweetController {
 
     @Autowired
     LikesService likesService;
-    
-    // @GetMapping("/tweets")
-    // public String allTweets(Model model, Principal principal){
-    //     String username = principal.getName();
-
-    //     System.out.println("Current user");
-    //     System.out.println(username);
-
-    //     //PAGINATION
-    //     model.addAttribute("tweets", tweetService.getAll(0));
-        
-    //     model.addAttribute("currentUser", username);
-    //     return "tweets";
-    // }
 
 
     @GetMapping("/tweets")
@@ -50,21 +36,13 @@ public class TweetController {
         Integer tweetsOnOnePage = 4;
         Long pages = (long) Math.ceil(tweetCount / tweetsOnOnePage);
 
-        System.out.println("PAGES");
-        System.out.println(pages);
-
-
-        System.out.println("PAGE");
-        System.out.println(page);
-
-
         System.out.println("Current user");
         System.out.println(username);
 
         model.addAttribute("currentUser", username);
         model.addAttribute("tweets", tweetService.getAll(page, tweetsOnOnePage));
 
-        //PAGINATION
+    
         model.addAttribute("pages", pages);
         model.addAttribute("currentPage", Integer.parseInt(page));
         

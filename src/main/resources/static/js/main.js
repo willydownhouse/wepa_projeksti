@@ -84,5 +84,3 @@ addCommenttForms.forEach((form) => {
     e.target.querySelector(".form-control").value = "";
   });
 });
-
-console.log("daas");
