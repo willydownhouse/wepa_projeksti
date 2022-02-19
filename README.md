@@ -7,6 +7,8 @@ You can test app:
 
 Sign up with own credentials or use these below:
 
-username: user
+username:
+user
 
-password: test1234
+password:
+test1234
