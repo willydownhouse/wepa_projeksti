@@ -1,6 +1,7 @@
 # wepa_projeksti
 
-App running: https://blooming-meadow-29956.herokuapp.com/
+App running:
+https://blooming-meadow-29956.herokuapp.com/
 
 You can test app:
 
