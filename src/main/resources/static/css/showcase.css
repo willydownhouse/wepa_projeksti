@@ -55,11 +55,30 @@ h3 {
 
 .cont {
   height: 100vh;
+  position: relative;
 }
 
-.bgphoto {
+.dark-bg,
+.main-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.main-bg {
   background: url(https://media.istockphoto.com/photos/teamwork-network-and-community-concept-picture-id1290692464?b=1&k=20&m=1290692464&s=170667a&w=0&h=dqOKmx-eAr8otIlDUgr6wtFQVq4ssywThTOnyhOpiA0=)
     no-repeat center center/cover;
+  opacity: 0.4;
+}
+
+.dark-bg {
+  background: rgba(0, 0, 0);
+}
+.bgphoto {
+  /* background: url(https://media.istockphoto.com/photos/teamwork-network-and-community-concept-picture-id1290692464?b=1&k=20&m=1290692464&s=170667a&w=0&h=dqOKmx-eAr8otIlDUgr6wtFQVq4ssywThTOnyhOpiA0=)
+    no-repeat center center/cover; */
   position: relative;
   padding: 0px 50px;
 }
